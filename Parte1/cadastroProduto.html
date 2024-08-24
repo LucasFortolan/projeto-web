@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro Produto</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+        form {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 500px;
+        }
+        h1, h2 {
+            color: #333333;
+            text-align: center;
+        }
+        label {
+            display: block;
+            font-weight: bold;
+            margin: 15px 0 5px;
+        }
+        input[type="text"], input[type="number"], input[type="file"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+        input[type="submit"], button {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            background-color: #007BFF;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            box-sizing: border-box;
+            margin-top: 20px;
+        }
+        input[type="submit"]:hover, button:hover {
+            background-color: #0056b3;
+        }
+        #displayImage {
+            display: block;
+            margin: 20px auto;
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <form id="cadastroProduto">
+        <h1>Cadastrar novo produto</h1>
+        <h2>Dados Básicos</h2>
+        <!-- SKU -->
+        <label for="sku">Código (SKU)</label>
+        <input type="text" id="sku" name="sku" placeholder="" required>
+        <!-- Nome -->
+        <label for="nomeProduto">Nome</label>
+        <input type="text" id="nomeProduto" name="nomeProduto" placeholder="" required>
+        <!-- Preço de Venda-->
+        <label for="precovenda">Preço de venda</label>
+        <input type="number" id="precovenda" name="precovenda" placeholder="" required step="0.01">
+        <h2>Imagem</h2>
+        <!-- Solicitar Upload da imagem -->
+        <label for="imageUpload">Selecione uma imagem do produto</label>
+        <input type="file" id="imageUpload" accept="image/*">
+        
+        <img id="displayImage" src="" alt="Imagem do produto" style="display:none;" />
+
+        <h2>Estoque</h2>
+        <!-- Estoque -->
+        <label for="quantidade">Quantidade</label>
+        <input type="number" id="quantidade" name="quantidade" placeholder="" required>
+        <!-- Preço de Custo -->
+        <label for="precocusto">Preço de custo</label>
+        <input type="number" id="precocusto" name="precocusto" placeholder="" required step="0.01">
+        
+        <!-- Botão para submeter o cadastro -->
+        <button type="button" onclick="window.location.href='dashboard.html'">Criar Cadastro</button>
+    </form>
+</body>
+</html>

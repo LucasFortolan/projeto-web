@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ForSam</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+        #dashboard {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #333333;
+        }
+        p {
+            font-size: 16px;
+            margin-bottom: 20px;
+            color: #666666;
+        }
+        a {
+            text-decoration: none;
+            color: #007BFF;
+            font-size: 16px;
+            margin: 10px 0;
+            display: block;
+            padding: 10px;
+            border-radius: 4px;
+            background-color: #f8f9fa;
+            border: 1px solid #ddd;
+            transition: background-color 0.3s, border-color 0.3s;
+        }
+        a:hover {
+            background-color: #e2e6ea;
+            border-color: #007BFF;
+        }
+        .graphic-interface {
+            background-color: #28a745;
+            color: white;
+        }
+        .graphic-interface:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <div id="dashboard">
+        <!-- DASHBOARD  -->
+        <!-- https://img.freepik.com/vetores-gratis/painel-de-infografico-de-modelo-de-painel-de-usuario_23-2148378206.jpg?semt=ais_hybrid --> 
+        <h1>Tela Inicial</h1>
+        <p>Seja bem-vindo ao Sistema ForSam!&#128526;</p>
+        <!-- Campo de acesso para determinados locais -->
+        <a href="cadastroProduto.html">Cadastro de Produto</a>
+        <a href="cadastroCliente.html">Cadastro de Cliente</a>
+        <a href="produto.html">Produto</a>
+        <a href="cliente.html">Cliente</a>
+        <a href="relatorio.html">Relatório</a>
+        <!-- Campo de Interface Gráfica (mudar cor de fundo e letra) -->
+        <a href="grafico.html" class="graphic-interface">Interface Gráfica</a>
+    </div>
+</body>
+</html>
