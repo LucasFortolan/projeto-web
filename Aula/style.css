@@ -1,0 +1,90 @@
+@charset "UTF-8";
+/*  
+    Entender o que tem em cada elemento do CSS
+    Diminuir o espaçamento desnecessário
+    Color um tamanho para cada titulo
+    Identidade visual ao site
+*/
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg, #f5f5f5, #e2e2e2);
+    color: #333;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    text-align: justify; /* Justifica todo o texto dentro do body */
+    line-height: 1.2;
+}
+
+h1, h2, h3 {
+    color: #0056b3;
+    margin: 15px 0; /* Ajusta o espaçamento acima e abaixo dos títulos */  
+    padding: 0; /* Remove qualquer padding adicional */
+}
+
+img {
+    display: block;
+    max-width: 200px;
+    height: auto;
+    border-radius: 50%; /* Torna a imagem circular */
+    margin: 0 auto; /* Centraliza a imagem */
+}
+#NomeAutor {
+    text-align: center;
+}
+
+.container {
+    flex: 1;
+}
+
+.left-column {
+    position: fixed; /* Fixa a coluna à esquerda */
+    top: 0; /* Alinha ao topo da tela */
+    left: 0; /* Alinha à esquerda da tela */
+    width: 20%; /* Defina a largura que desejar */
+    height: (100vh - 10px); /* Ocupa toda a altura da tela */
+    background: #ffff; /* Mantenha o fundo da coluna */
+    padding: 10px; /* Ajuste o padding conforme necessário */
+    overflow-y: auto; /* Adiciona rolagem se o conteúdo exceder a altura */
+}
+.right-column {
+    position: fixed; /* Fixa a coluna à direita */
+    top: 0; /* Alinha ao topo da tela */
+    right: 0; /* Alinha à direita da tela */
+    /*left: 20%; /* Inicia após a left-column */
+    width: calc(80% - 45px); /* Defina a largura que desejar */
+    height: (95vh - 10px); /* Ocupa toda a altura da tela */
+    background: #ffff; /* Defina o fundo da coluna */
+    padding: 10px; /* Ajuste o padding conforme necessário */
+    overflow-y: auto;
+}
+
+a {
+    color: #4172a7;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #027b3a;
+}
+
+footer {
+    background-color: #074171f8;
+    color: #fff;
+    text-align: center;
+    padding: 5px;
+    width: 100%;
+}
+
+footer:hover {
+    color: #cef0f8;
+}
+@media (max-width: 100%) {
+    .container {
+        flex-direction: column;
+        padding: 10px;
+    }
+}
