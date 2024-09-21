@@ -128,10 +128,14 @@ footer:hover {
         padding: 0 10px; /* Adiciona padding para evitar que o conteúdo toque as bordas da tela */
     }
     .left-column, .right-column {
+        top: 5px; /* Posiciona 5px abaixo do topo da tela */
+        left: 10px; /* Fixa a 5px da esquerda */
+        right: 10px;
         position: relative; /* Remove o comportamento fixo em telas pequenas */
-        width: 100%; /* As colunas ocupam 100% da largura */
+        width: calc(100% - 20px); /* As colunas ocupam 100% da largura */
         margin-bottom: 20px; /* Espaçamento entre as colunas */
         padding: 15px; /* Aumenta o padding para telas menores */
+        box-sizing: border-box; /* Garante que padding e bordas sejam incluídos na largura total */
     }
     .left-column {
         order: 1; /* Define a ordem para que a coluna esquerda fique acima */
