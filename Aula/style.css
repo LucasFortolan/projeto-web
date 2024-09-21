@@ -7,33 +7,34 @@ body {
     padding: 0; /* Remove o padding interno */
     display: flex; /* Define o layout do body como flexbox */
     flex-direction: column; /* Coloca os elementos em uma coluna vertical */
-    min-height: calc(100vh - 10px); /* Garante que o body ocupe no mínimo 100% da altura da viewport */
+    min-height: 100vh; /* Garante que o body ocupe no mínimo 100% da altura da viewport */
     text-align: justify; /* Alinha o texto de forma justificada */
-}
-h1, h2, h3, p {
-    word-break: break-word;
+    margin: 0; /* Remove margens do body */
 }
 
+h1, h2, h3, p {
+    word-break: break-word; /* Garante que as palavras quebrem corretamente se forem longas */
+}
 
 h1 {
-    margin: 5px 10px; /* Define margem pequena em cima e embaixo */
+    margin: 5px 10px; /* Define margem pequena em cima e embaixo do h1 */
     color: #4CD58A; /* Cor do título principal */
     font-size: 1.2em; /* Tamanho da fonte para h1 */
-    overflow-wrap: break-word; /* Garante que o texto dos títulos quebre corretamente */
+    overflow-wrap: break-word; /* Garante que o texto do título quebre corretamente */
 }
 
 h2 {
-    margin: 5px 20px; /* Define margem com mais espaçamento lateral */
+    margin: 5px 20px; /* Define margem com mais espaçamento lateral para h2 */
     color: #0BB5A4; /* Cor do título secundário */
     font-size: 1.0em; /* Tamanho da fonte para h2 */
-    overflow-wrap: break-word; /* Garante que o texto dos títulos quebre corretamente */
+    overflow-wrap: break-word; /* Garante que o texto do título quebre corretamente */
 }
 
 h3 {
-    margin: 5px 30px; /* Define mais espaçamento lateral */
+    margin: 5px 30px; /* Define mais espaçamento lateral para h3 */
     color: #13CABE; /* Cor do título terciário */
     font-size: 0.8em; /* Tamanho da fonte para h3 */
-    overflow-wrap: break-word; /* Garante que o texto dos títulos quebre corretamente */
+    overflow-wrap: break-word; /* Garante que o texto do título quebre corretamente */
 }
 
 p {
@@ -42,7 +43,7 @@ p {
 }
 
 ul, li {
-    font-family: 'Roboto', sans-serif; /* Mantém a mesma fonte do body */
+    font-family: 'Roboto', sans-serif; /* Mantém a mesma fonte do body para listas */
     font-size: 0.95em; /* Define o tamanho da fonte para listas */
 }
 
@@ -54,8 +55,8 @@ ul, li {
 hr {
     border: none; /* Remove a borda padrão */
     border-top: 2px dashed #0877BB; /* Cria uma linha tracejada com cor personalizada */
-    width: 95%; /* A linha ocupa toda a largura */
-    margin: 10px auto; /* Define uma margem ao redor do hr e Centraliza*/
+    width: 95%; /* Define a largura da linha como 95% do contêiner */
+    margin: 10px auto; /* Define uma margem ao redor do hr e centraliza */
 }
 
 img {
@@ -73,30 +74,25 @@ img {
     box-sizing: border-box; /* Garante que padding e bordas sejam incluídos no cálculo de largura */
 }
 
-.left-column {
-    position: fixed; /* Fixa a coluna à esquerda da tela */
-    top: 5px; /* Posiciona 5px abaixo do topo da tela */
-    left: 15px; /* Fixa a 5px da esquerda */
-    width: 25%; /* Define a largura da coluna */
+.left-column, .right-column {
+    position: fixed; /* Fixa as colunas no layout */
     background: #ffff; /* Fundo branco */
     border: 2px solid #ccc; /* Borda cinza clara */
     border-radius: 8px; /* Arredonda os cantos */
     padding: 10px; /* Espaçamento interno */
     box-sizing: border-box; /* Garante que padding e bordas sejam incluídos no cálculo de largura */
+}
 
+.left-column {
+    top: 5px; /* Posiciona 5px abaixo do topo da tela */
+    left: 15px; /* Fixa a 5px da esquerda */
+    width: 25%; /* Define a largura da coluna esquerda */
 }
 
 .right-column {
-    position: fixed; /* Fixa a coluna à direita da tela */
     top: 5px; /* Posiciona 5px abaixo do topo da tela */
     right: 15px; /* Fixa a 5px da direita */
     width: calc(75% - 45px); /* Define a largura da coluna direita */
-    background: #ffff; /* Fundo branco */
-    border: 2px solid #ccc; /* Borda cinza clara */
-    border-radius: 8px; /* Arredonda os cantos */
-    padding: 10px; /* Espaçamento interno */
-    box-sizing: border-box; /* Garante que padding e bordas sejam incluídos no cálculo de largura */
-
 }
 
 a {
@@ -115,6 +111,7 @@ footer {
     text-align: center; /* Centraliza o texto no rodapé */
     padding: 5px; /* Espaçamento interno no rodapé */
     border-radius: 8px; /* Arredonda os cantos */
+    margin-top: auto; /* Garante que o footer seja empurrado para o final da página */
 }
 
 footer:hover {
@@ -124,7 +121,7 @@ footer:hover {
 /* Responsividade: ajusta as colunas em telas menores (máx. 768px) */
 @media (max-width: 768px) {
     .container, .left-column, .right-column {
-        transition: all 0.3s ease-in-out;
+        transition: all 0.3s ease-in-out; /* Suaviza a transição ao alterar o layout */
     }    
     .container {
         flex-direction: column; /* Empilha as colunas em vez de mantê-las lado a lado */
@@ -143,15 +140,15 @@ footer:hover {
         order: 2; /* Define a ordem para que a coluna direita fique abaixo */
     }
     footer {
-        order:3;
+        order: 3; /* Define a ordem do footer em telas menores */
     }
     h1, h2, h3 {
-        margin-left: 0;
+        margin-left: 0; /* Remove margens laterais em telas menores */
         margin-right: 0;
     }
     p {
         margin: 5px 10px; /* Reduz as margens para parágrafos em telas menores */
-        padding-left: 10px;
+        padding-left: 10px; /* Adiciona padding nas laterais do parágrafo */
         padding-right: 10px;
     }
     img {
