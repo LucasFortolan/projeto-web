@@ -10,6 +10,10 @@ body {
     min-height: calc(100vh - 10px); /* Garante que o body ocupe no mínimo 100% da altura da viewport */
     text-align: justify; /* Alinha o texto de forma justificada */
 }
+h1, h2, h3, p {
+    word-break: break-word;
+}
+
 
 h1 {
     margin: 5px 10px; /* Define margem pequena em cima e embaixo */
@@ -19,7 +23,7 @@ h1 {
 }
 
 h2 {
-    margin: 5px 15px; /* Define margem com mais espaçamento lateral */
+    margin: 5px 20px; /* Define margem com mais espaçamento lateral */
     color: #0BB5A4; /* Cor do título secundário */
     font-size: 1.0em; /* Tamanho da fonte para h2 */
     overflow-wrap: break-word; /* Garante que o texto dos títulos quebre corretamente */
@@ -48,11 +52,10 @@ ul, li {
 }
 
 hr {
-    text-align: center; /* Centraliza a linha horizontal */
     border: none; /* Remove a borda padrão */
     border-top: 2px dashed #0877BB; /* Cria uma linha tracejada com cor personalizada */
-    width: 100%; /* A linha ocupa toda a largura */
-    margin: 10px; /* Define uma margem ao redor do hr */
+    width: 95%; /* A linha ocupa toda a largura */
+    margin: 10px auto; /* Define uma margem ao redor do hr e Centraliza*/
 }
 
 img {
@@ -73,7 +76,7 @@ img {
 .left-column {
     position: fixed; /* Fixa a coluna à esquerda da tela */
     top: 5px; /* Posiciona 5px abaixo do topo da tela */
-    left: 5px; /* Fixa a 5px da esquerda */
+    left: 15px; /* Fixa a 5px da esquerda */
     width: 25%; /* Define a largura da coluna */
     background: #ffff; /* Fundo branco */
     border: 2px solid #ccc; /* Borda cinza clara */
@@ -86,8 +89,8 @@ img {
 .right-column {
     position: fixed; /* Fixa a coluna à direita da tela */
     top: 5px; /* Posiciona 5px abaixo do topo da tela */
-    right: 5px; /* Fixa a 5px da direita */
-    width: 70%; /* Define a largura da coluna direita */
+    right: 15px; /* Fixa a 5px da direita */
+    width: calc(75% - 45px); /* Define a largura da coluna direita */
     background: #ffff; /* Fundo branco */
     border: 2px solid #ccc; /* Borda cinza clara */
     border-radius: 8px; /* Arredonda os cantos */
@@ -111,6 +114,7 @@ footer {
     color: #fff; /* Cor do texto no rodapé */
     text-align: center; /* Centraliza o texto no rodapé */
     padding: 5px; /* Espaçamento interno no rodapé */
+    border-radius: 8px; /* Arredonda os cantos */
 }
 
 footer:hover {
@@ -119,6 +123,9 @@ footer:hover {
 
 /* Responsividade: ajusta as colunas em telas menores (máx. 768px) */
 @media (max-width: 768px) {
+    .container, .left-column, .right-column {
+        transition: all 0.3s ease-in-out;
+    }    
     .container {
         flex-direction: column; /* Empilha as colunas em vez de mantê-las lado a lado */
         padding: 0 10px; /* Adiciona padding para evitar que o conteúdo toque as bordas da tela */
@@ -144,6 +151,8 @@ footer:hover {
     }
     p {
         margin: 5px 10px; /* Reduz as margens para parágrafos em telas menores */
+        padding-left: 10px;
+        padding-right: 10px;
     }
     img {
         max-width: 150px; /* Reduz o tamanho da imagem em telas menores */
