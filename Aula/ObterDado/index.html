@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Captura de E-mail</title>
+</head>
+<body>
+    <h1>Cadastre seu E-mail</h1>
+    <form id="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">
+        <label for="email">E-mail:</label>
+        <input type="email" id="email" name="email" required>
+        <button type="submit">Enviar</button>
+    </form>
+
+    <script>
+        document.getElementById("btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2").addEventListener("submit", function(event) {
+            event.preventDefault(); // Evita o comportamento padrão de envio do formulário
+
+            // Captura o valor do e-mail inserido
+            const email = document.getElementById("email").value;
+
+            // Aqui você pode salvar o e-mail localmente (exemplo usando LocalStorage)
+            // É salvo no navegador do cliente
+            localStorage.setItem("btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2", email);
+
+            // Exibe uma mensagem ou realiza outra ação após salvar
+            alert("E-mail salvo com sucesso: " + email);
+        });
+    </script>
+</body>
+</html>
