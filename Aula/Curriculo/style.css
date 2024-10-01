@@ -1,0 +1,161 @@
+@charset "UTF-8"; /* Define o conjunto de caracteres UTF-8 */
+
+body {
+    font-family: 'Roboto', sans-serif; /* Define a fonte principal como Roboto */
+    background: linear-gradient(135deg, #f5f5f5, #e2e2e2); /* Define um fundo gradiente */
+    color: #000000; /* Define a cor do texto como preto */
+    padding: 0; /* Remove o padding interno */
+    display: flex; /* Define o layout do body como flexbox */
+    flex-direction: column; /* Coloca os elementos em uma coluna vertical */
+    min-height: 100vh; /* Garante que o body ocupe no mínimo 100% da altura da viewport */
+    text-align: justify; /* Alinha o texto de forma justificada */
+    margin: 0; /* Remove margens do body */
+}
+
+h1, h2, h3, p {
+    word-break: break-word; /* Garante que as palavras quebrem corretamente se forem longas */
+}
+
+h1 {
+    margin: 5px 10px; /* Define margem pequena em cima e embaixo do h1 */
+    color: #4CD58A; /* Cor do título principal */
+    font-size: 1.2em; /* Tamanho da fonte para h1 */
+    overflow-wrap: break-word; /* Garante que o texto do título quebre corretamente */
+}
+
+h2 {
+    margin: 5px 20px; /* Define margem com mais espaçamento lateral para h2 */
+    color: #0BB5A4; /* Cor do título secundário */
+    font-size: 1.0em; /* Tamanho da fonte para h2 */
+    overflow-wrap: break-word; /* Garante que o texto do título quebre corretamente */
+}
+
+h3 {
+    margin: 5px 30px; /* Define mais espaçamento lateral para h3 */
+    color: #13CABE; /* Cor do título terciário */
+    font-size: 0.8em; /* Tamanho da fonte para h3 */
+    overflow-wrap: break-word; /* Garante que o texto do título quebre corretamente */
+}
+
+p {
+    font-size: 0.85em; /* Define o tamanho da fonte para parágrafos */
+    margin: 10px 30px; /* Define margens para parágrafos */
+}
+
+ul, li {
+    font-family: 'Roboto', sans-serif; /* Mantém a mesma fonte do body para listas */
+    font-size: 0.95em; /* Define o tamanho da fonte para listas */
+}
+
+#NomeAutor {
+    text-align: center; /* Centraliza o nome do autor */
+    color: #459DE9; /* Cor personalizada para o nome do autor */
+}
+
+hr {
+    border: none; /* Remove a borda padrão */
+    border-top: 2px dashed #0877BB; /* Cria uma linha tracejada com cor personalizada */
+    width: 95%; /* Define a largura da linha como 95% do contêiner */
+    margin: 10px auto; /* Define uma margem ao redor do hr e centraliza */
+}
+
+img {
+    display: block; /* Exibe a imagem como um bloco */
+    max-width: 200px; /* Define a largura máxima da imagem */
+    height: auto; /* Mantém a proporção da imagem */
+    border: 5px solid #ccc; /* Adiciona uma borda sólida */
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra sutil à imagem */
+    border-radius: 50%; /* Faz a imagem ser circular */
+    margin: 0 auto; /* Centraliza a imagem no bloco */
+}
+
+.container {
+    flex: 1; /* Faz o container ocupar o espaço restante no flexbox */
+    box-sizing: border-box; /* Garante que padding e bordas sejam incluídos no cálculo de largura */
+}
+
+.left-column, .right-column {
+    position: fixed; /* Fixa as colunas no layout */
+    background: #ffff; /* Fundo branco */
+    border: 2px solid #ccc; /* Borda cinza clara */
+    border-radius: 8px; /* Arredonda os cantos */
+    padding: 10px; /* Espaçamento interno */
+    box-sizing: border-box; /* Garante que padding e bordas sejam incluídos no cálculo de largura */
+}
+
+.left-column {
+    top: 5px; /* Posiciona 5px abaixo do topo da tela */
+    left: 15px; /* Fixa a 5px da esquerda */
+    width: 25%; /* Define a largura da coluna esquerda */
+}
+
+.right-column {
+    top: 5px; /* Posiciona 5px abaixo do topo da tela */
+    right: 15px; /* Fixa a 5px da direita */
+    width: calc(75% - 45px); /* Define a largura da coluna direita */
+}
+
+a {
+    color: #0F9DC3; /* Define a cor padrão dos links */
+    text-decoration: none; /* Remove o sublinhado dos links */
+    transition: color 0.3s ease; /* Suaviza a transição da cor ao passar o mouse */
+}
+
+a:hover {
+    color: #529A00; /* Muda a cor dos links ao passar o mouse */
+}
+
+footer {
+    background-color: #074171f8; /* Cor de fundo do rodapé */
+    color: #fff; /* Cor do texto no rodapé */
+    text-align: center; /* Centraliza o texto no rodapé */
+    padding: 5px; /* Espaçamento interno no rodapé */
+    border-radius: 8px; /* Arredonda os cantos */
+    margin-top: auto; /* Garante que o footer seja empurrado para o final da página */
+}
+
+footer:hover {
+    color: #cef0f8; /* Altera a cor do texto ao passar o mouse no rodapé */
+}
+
+/* Responsividade: ajusta as colunas em telas menores (máx. 768px) */
+@media (max-width: 768px) {
+    .container, .left-column, .right-column {
+        transition: all 0.3s ease-in-out; /* Suaviza a transição ao alterar o layout */
+    }    
+    .container {
+        flex-direction: column; /* Empilha as colunas em vez de mantê-las lado a lado */
+        padding: 0 10px; /* Adiciona padding para evitar que o conteúdo toque as bordas da tela */
+    }
+    .left-column, .right-column {
+        top: 5px; /* Posiciona 5px abaixo do topo da tela */
+        left: 10px; /* Fixa a 5px da esquerda */
+        right: 10px;
+        position: relative; /* Remove o comportamento fixo em telas pequenas */
+        width: calc(100% - 20px); /* As colunas ocupam 100% da largura */
+        margin-bottom: 20px; /* Espaçamento entre as colunas */
+        padding: 15px; /* Aumenta o padding para telas menores */
+        box-sizing: border-box; /* Garante que padding e bordas sejam incluídos na largura total */
+    }
+    .left-column {
+        order: 1; /* Define a ordem para que a coluna esquerda fique acima */
+    }
+    .right-column {
+        order: 2; /* Define a ordem para que a coluna direita fique abaixo */
+    }
+    footer {
+        order: 3; /* Define a ordem do footer em telas menores */
+    }
+    h1, h2, h3 {
+        margin-left: 0; /* Remove margens laterais em telas menores */
+        margin-right: 0;
+    }
+    p {
+        margin: 5px 10px; /* Reduz as margens para parágrafos em telas menores */
+        padding-left: 10px; /* Adiciona padding nas laterais do parágrafo */
+        padding-right: 10px;
+    }
+    img {
+        max-width: 150px; /* Reduz o tamanho da imagem em telas menores */
+    }
+}
