@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>JavaScript</title>
+</head>
+<body>
+    <p>Chamar a função de data/hora do sistema e usar console.</p>
+    <script>
+        function apresentarHora() {
+            var horaAtual = new Date().getHours();
+            if (horaAtual < 12) {
+                console.log("Bom dia!")
+            } else if (horaAtual < 18) {
+                console.log("Boa tarde")
+            } else {
+                console.log("Boa noite")
+            }
+        }
+        apresentarHora();
+    </script>
+</body>

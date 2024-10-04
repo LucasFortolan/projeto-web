@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+    <head>
+        <meta charset="utf-8" />
+        <title>JavaScript</title>
+    </head>
+    <body>
+        <p>Trabalhando com o FOR e SWITCH</p>
+        <script>
+            var soma = 0;
+            var num, ordem;
+            for(var soma =1; soma < 5; soma ++) {
+                switch(soma) {
+                    case 1:
+                        ordem = "Primeiro";
+                        break; // Garante que a execução saia do Switch, quando uma condição for atentida. Se não for expresso, continua executando o Switch.
+                    case 2:
+                        ordem = "Segundo";
+                        break;
+                    case 3:
+                        ordem = "Terceiro";
+                        break;
+                    case 4:
+                        ordem = "último, quarto";
+                }
+                num = prompt("A ordem " + ordem + " número: ", 1);
+                soma += Number(num);
+            }
+            alert("A média é: " + soma/4)
+        </script>
+    </body>

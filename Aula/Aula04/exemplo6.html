@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>JavaScript</title>
+</head>
+<body>
+    <h2>Trabalhar com JavaScript Arrays</h2>
+    <p>Array.forEach() chama função para cada elemento</p>
+    <h1 id="principal"></h1>
+    <script>
+        const times = ["Corinthians", "São Paulo", "Palmeiras", "Santos"];
+        let text = "<ul>";
+        times.forEach(myFunction);
+        text += "</ul>";
+        document.getElementById("principal").innerHTML = text;
+        function myFunction(value) {
+            text += "<li>" + value + "</li>";
+        }
+    </script> 
+</body>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+    <head>
+        <meta charset="utf-8" />
+        <title>JavaScript</title>
+    </head>
+    <body>
+        <!--Apenas por questão de estudo, será criado varios script, entretanto só é permitido uma vez, ao final do código-->
+        <p>Este documento irá apresentar sua data final de alteração</p>
+        <script>
+            document.write("Essa página foi modificadam" + document.lastModified)
+        </script>
+        <hr>
+        <p>Trabalhando com variaveis</p>
+        <script>
+            var preValor = 10.00;
+            var tipQte = preValor * 0.15;
+            var message1 = "O valor é: ";
+            var message2 = "\nDesconto de 15% apresenta uma economia de : R$ ";
+            window.alert(message1 + preValor + message2 + tipQte)
+        </script>
+        <hr>
+        <p>Trabalhando com o condional IF</p>
+        <script>
+            var horas = 15;
+            var resposta;
+            if (horas < 12) {
+                resposta = "Bom dia";
+            } else if (horas < 18) {
+                resposta = "Boa tarde";
+            } else {
+                resposta = "BOa noite";
+            } alert(resposta);
+        </script>
+    </body>
