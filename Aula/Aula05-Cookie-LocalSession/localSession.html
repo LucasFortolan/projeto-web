@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trabalhando com Session/Local Storage</title>
+    <script>
+        function clickContador() {
+            if (typeof (Storage) !== "undefined") {
+                if (localStorage.clickcount) {
+                    localStorage.clickcount = Number(localStorage.clickcount) + 1;
+                } else {
+                    localStorage.clickcount = 1;
+                }
+                document.getElementById("result").innerHTML = "Você clicou no botão " + localStorage.clickcount + " vez(es).";
+            } else {
+                document.getElementById("result").innerHTML = "Desculpe, seu navegador não permite web storage..."
+            }
+        }
+        function clickContador1() {
+            if (typeof (Storage) !== "undefined") {
+                if (sessionStorage.clickcount) {
+                    sessionStorage.clickcount = Number(sessionStorage.clickcount) + 1;
+                } else {
+                    sessionStorage.clickcount = 1;
+                }
+                document.getElementById("result1").innerHTML = "Você clicou no botão " + sessionStorage.clickcount + " vez(es).";
+            } else {
+                document.getElementById("result1").innerHTML = "Desculpe, seu navegador não permite web storage..."
+            }
+        }
+
+    </script>
+</head>
+
+<body>
+    <p><button onclick="clickContador()" type="button">Clique em mim!!</button></p>
+    <div id="result"></div>
+    <p>Clique no botão e veja o contador crescer.</p>
+    <p>Se você fechar a TAB ou o navegador(browser) toda vez que acessar aqui o resultado ainda estará armazenado!!</p>
+
+    <p><button onclick="clickContador1()" type="button">Clique em mim!!</button></p>
+    <div id="result1"></div>
+    <p>Clique no botão e veja o contador crescer.</p>
+    <p>Se você fechar a TAB ou o navegador(browser) resetará a contagem!!</p>
+</body>
+
+</html>

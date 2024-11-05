@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel PW</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 1em;
+        }
+        h1 {
+            font-size: 1.25em;
+        }
+        label {
+            margin-bottom: 10px;
+            padding-left: 15px;
+            margin-top: 10px;
+        }
+        input, button {
+            padding: 5px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1><strong>Reserva de quartos do Hotel PW</strong></h1>
+    <form>
+        <label for="nome">Nome Completo: </label>
+        <input type="text" id="nome" placeholder="Nome e sobrenome" required><br>
+
+        <label for="email">Endereço de E-mail: </label>
+        <input type="text" id="email" placeholder="exemplo@dominio.com" required><br>
+
+        <label for="dataChegada">Data de Chegada: </label>
+        <input type="date" id="dataChegada" placeholder="dd/mm/aaaa" required><br>
+
+        <label for="numNoites">Número de noites (Cada noite custa R$99,00): </label>
+        <input type="number" id="numNoites" value="1" min="1" max="30" required><br>
+
+        <label for="numConvidados">Número de Convidados (Cada convidado adicional custa R$10,00 por noite): </label>
+        <input type="number" id="numConvidados" value="1" min="1" required>
+
+        <p id = "orcamentoEstimado"><strong>Orçamento Estimado: R$ 99,00</strong></p>
+
+        <label for="codPromo">Código de Promoção: </label>
+        <input type="text" id="codPromo" placeholder=""><br>
+
+        <button type="submit">Fazer Reserva</button>
+    </form>
+    <script>
+        function atualizarOrcamento() {
+            var precoNoite = 99;
+            var precoConvidado = 10;
+            var codPromocional = "AZaz09";
+
+            var numNoites = parseInt(document.getElementById('numNoites').value);
+            var numConvidados = parseInt(document.getElementById('numConvidados').value);
+            var codPromo = document.getElementById('codPromo').value;
+
+            var orcamento = (precoNoite * numNoites) + ((numConvidados - 1) * precoConvidado * numNoites);
+
+            if (codPromo === codPromocional) {
+                orcamento = orcamento * 0.9; 
+            }
+
+            document.getElementById('orcamentoEstimado').innerHTML = `<strong>Orçamento Estimado: R$ ${orcamento.toFixed(2)} </strong>`;
+        }
+
+        document.getElementById('numNoites').addEventListener('input', atualizarOrcamento);
+        document.getElementById('numConvidados').addEventListener('input', atualizarOrcamento);
+        document.getElementById('codPromo').addEventListener('input', atualizarOrcamento);
+    </script>
+</body>
+
+</html>
