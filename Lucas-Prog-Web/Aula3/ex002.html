@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Segunda sequência de exemplos JS</title>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        aside
+        <h1 align="center">Brincando com JS - Parte 2</h1>
+        <p id = "conta"></p>
+        <p id = "car"></p>
+        <p id = "person"></p>
+        <p id = "window"></p>
+        <button onclick = "openWin()">Abrir janela</button>
+        <script>
+            var x = (3+21)*14, y = 10, car = ["Fusca", "Brasilia", "Opalla", "Spazio", "Oggi", "Corcel"], 
+            person = {
+                firtname: "Jose", 
+                lastname: "Silva", 
+                age: 50, 
+                eyecolor:"azul"
+            }
+            document.getElementById('conta').innerHTML = y;
+            document.getElementById('conta').innerHTML = x;
+            document.getElementById('car').innerHTML = car[2];
+            document.getElementById('person').innerHTML = person.firtname + " tem " + person.age + " anos de idade ";
+
+            function openWin() {
+                var myWindow = window.open("","","width=400, height=10")
+            }
+        </script>
+    </body>
+</html>

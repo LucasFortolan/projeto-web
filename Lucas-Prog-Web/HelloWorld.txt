@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<head>
+	<title>Hello Wordl!!</title>
+	<meta charset="UT-8"/>
+	<meta name="keywords" content="Legal"/>
+	<meta name="description" content = "Pagina Boa"/>
+</head>
+<body>
+	<h1>Hello World!!</h1>
+	<h2><i>Marcão</i> é Legal até debaixo<b>d'agua</b></h2>
+	<p><a href="https://www.uol.com.br/" target="blank">UOL </a</p>
+</body>
+</html>
+

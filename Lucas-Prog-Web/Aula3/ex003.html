@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>3º Sequência de exemplos JS</title>
+</head>
+<body>
+    <h1 align = "center">Brincando com JS - Parte 3</h1>
+    <table id = "minhaTabela" style = "border: 2px solid black">
+    <tr>
+        <th>Coluna 1</th>
+        <th>Coluna 2</th>
+    </tr>
+    <tr>
+        <td>Linha 2 Coluna 1</td>
+        <td>Linha 2 Coluna 2</td>
+    </tr>
+    <tr>
+        <td>Linha 3 Coluna 1</td>
+        <td>Linha 3 Coluna 2</td>
+    </tr>
+    <tr>
+        <td>Linha 4 Coluna 1</td>
+        <td>Linha 4 Coluna 2</td>
+    </tr>
+    <tr>
+        <td>Linha 5 Coluna 1</td>
+        <td>Linha 5 Coluna 2</td>
+    </tr>
+    <button type ="button" onclick = "insRow('minhaTabela')">Crescer  Linhas</button>
+    </table>
+    <script> 
+        function insRow(id) {
+            var table = document.getElementById(id);
+            var row = table.insertRow();
+            var cell1 = row.insertCell(0);
+            var cell2 = row.insertCell(1);
+            cell1.innerHTML = "Nova Célula 1";
+            cell2.innerHTML = "Nova Célula 2";
+        }
+    </script>
+
+</body>
+</html>
