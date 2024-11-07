@@ -1,0 +1,29 @@
+CREATE DATABASE crud_113676;
+use crud_113676;
+
+CREATE TABLE usuarios (
+		id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    email VARCHAR(100) NOT NULL,
+    SENHA VARCHAR(100) NOT NULL
+)
+
+
+use crud_113676;
+INSERT INTO usuarios (nome, email, senha) VALUES ('Lucas Fort', 'fortolan@outlook.com', '123456');
+
+
+Use crud_113676;
+SELECT * FROM usuarios;
+
+
+USE crud_113676;
+UPDATE usuarios SET nome = 'Lucas Fortolan', email = 'lucasfortolan@gmail.com', senha = 'messasfa' where id = 1;
+
+SELECT * from usuarios;
+
+
+use crud_113676;
+
+DELETE FROM usuarios WHERE id = 1;
+SELECT * from usuarios;
